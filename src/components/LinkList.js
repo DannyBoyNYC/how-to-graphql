@@ -36,22 +36,21 @@ class LinkList extends Component {
     store.writeQuery({ query: FEED_QUERY, data });
   };
 
+  _subscribeToNewLinks = async () => {
+    // ... you'll implement this 🔜
+  };
+
   render() {
     return (
       <Query query={FEED_QUERY}>
-        {({ loading, error, data }) => {
+        {({ loading, error, data, subscribeToMore }) => {
           if (loading) return <div>Loading</div>;
           if (error) return <div>Error</div>;
 
+          this._subscribeToNewLinks(subscribeToMore);
+
           const linksToRender = data.feed.links;
 
-          // return (
-          //   <div>
-          //     {linksToRender.map(link => (
-          //       <Link key={link.id} link={link} />
-          //     ))}
-          //   </div>
-          // );
           return (
             <div>
               {linksToRender.map((link, index) => (
