@@ -30,3 +30,53 @@ function post(parent, { url, description }, context) {
 ```
 
 WTF is parent and why does the postedBy not contain data?
+
+Update: postedBy started working when the query in LinkList was updated to:
+
+```js
+const FEED_QUERY = gql`
+  {
+    feed {
+      links {
+        id
+        createdAt
+        url
+        description
+        postedBy {
+          id
+          name
+        }
+        votes {
+          id
+          user {
+            id
+          }
+        }
+      }
+    }
+  }
+`;
+```
+
+from
+
+```js
+const FEED_QUERY = gql`
+  {
+    feed {
+      links {
+        id
+        createdAt
+        url
+        description
+      }
+    }
+  }
+`;
+```
+
+Check
+
+`export const FEED_QUERY = gql`
+
+on LinkList
