@@ -7,7 +7,7 @@ You can verify that the new user is there by sending the users query in the dev 
 At the end of https://www.howtographql.com/react-apollo/5-authentication/
 server /// resolvers/mutation.js
 
-```
+```js
 // function post(parent, args, context) {
 //   return context.prisma.createLink({
 //     url: args.url,
