@@ -1,5 +1,12 @@
 https://www.howtographql.com/react-apollo/2-queries-loading-links/
 
+
+GraphQl Server - spec ??
+- need to build a GQL server
+- use any programming language or
+- and use one of the reference implementations or
+- use [graphcool](https://www.graph.cool) - backend-as-a-service or BaaS - (vs. Prisma?) that provides a server out of the box
+
 ???
 https://www.howtographql.com/react-apollo/5-authentication/
 You can verify that the new user is there by sending the users query in the dev Playground in the database project.
